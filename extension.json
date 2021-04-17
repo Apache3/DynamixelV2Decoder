@@ -1,0 +1,13 @@
+{
+  "name": "DynamixelV2",
+  "apiVersion": "1.0.0",
+  "author": "Thomas Jeantet",
+  "version": "0.0.1",
+  "description": "Decodes Dynamixel protocol V2",
+  "extensions": {
+    "DynamixelV2": {
+      "type": "HighLevelAnalyzer",
+      "entryPoint": "HighLevelAnalyzer.Hla"
+    }
+  }
+}
