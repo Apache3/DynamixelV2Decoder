@@ -125,7 +125,7 @@ class Hla(HighLevelAnalyzer):
                 return analyzer_frame
 
         elif self.state == DxlState.COMMAND:
-            self.frame_len += 1
+            self.parse_frames(frame, 1)
             self.frame_command = DxlCommand(data)
             name = ''
             if data == DxlCommand.PING.value:
@@ -182,8 +182,8 @@ class Hla(HighLevelAnalyzer):
                 return analyzer_frame
 
         elif self.state == DxlState.ERR_CODE:
+            self.parse_frames(frame, 1)
             self.state = DxlState.CRC
-            self.frame_len += 1
             return AnalyzerFrame('Code', frame.start_time
                                  , frame.end_time, {'': self.frame_value})
 
