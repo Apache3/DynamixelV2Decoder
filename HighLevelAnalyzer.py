@@ -176,7 +176,10 @@ class Hla(HighLevelAnalyzer):
 
         elif self.state == DxlState.ERR_CODE:
             self.parse_frames(frame, 1)
-            self.state = DxlState.CRC
+            if self.frame_len == (self.frame_total_len - 2):
+                self.state = DxlState.CRC
+            else :
+                self.state = DxlState.VALUE
             return AnalyzerFrame('Code', frame.start_time
                                  , frame.end_time, {'': self.frame_value})
 
