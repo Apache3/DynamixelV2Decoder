@@ -60,9 +60,6 @@ class Hla(HighLevelAnalyzer):
         Settings can be accessed using the same name used above.
         '''
 
-        print("Settings:", self.my_string_setting,
-              self.my_number_setting, self.my_choices_setting)
-
     def parse_frames(self, frame: AnalyzerFrame, frame_len):
         ret = False
         data = frame.data['data']
