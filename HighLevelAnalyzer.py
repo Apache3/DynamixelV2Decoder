@@ -188,7 +188,9 @@ class Hla(HighLevelAnalyzer):
                                  , frame.end_time, {'': self.frame_value})
 
         elif self.state == DxlState.VALUE:
-            if self.parse_frames(frame, min(2, self.frame_total_len - (self.frame_len + 2))):
+            nb_frames = min(2, self.frame_total_len - (self.frame_len + 2 - self.frame_counter))
+            
+            if self.parse_frames(frame, nb_frames):
                 analyzer_frame = AnalyzerFrame('Value', self.start_frame_timestamp
                                                , frame.end_time, {'int': self.frame_value})
                 if self.frame_len == (self.frame_total_len - 2):
