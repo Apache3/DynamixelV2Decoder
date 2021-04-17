@@ -2,7 +2,7 @@
   "name": "Dynamixel V2 Decoder",
   "apiVersion": "1.0.0",
   "author": "Thomas Jeantet",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Decodes Dynamixel protocol V2",
   "extensions": {
     "DynamixelV2": {
