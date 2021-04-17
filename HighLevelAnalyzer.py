@@ -37,10 +37,6 @@ class DxlCommand(Enum):
 # High level analyzers must subclass the HighLevelAnalyzer class.
 class Hla(HighLevelAnalyzer):
     # List of settings that a user can set for this High Level Analyzer.
-    my_string_setting = StringSetting(label='best string 3v3r')
-    my_number_setting = NumberSetting(label='bullshit number', min_value=0, max_value=100)
-    my_choices_setting = ChoicesSetting(label='bsht choy seas', choices=('A', 'B'))
-
 
     # An optional list of types this analyzer produces, providing a way to customize the way frames are displayed in Logic 2.
     result_types = {
